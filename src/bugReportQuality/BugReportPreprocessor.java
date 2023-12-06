@@ -39,7 +39,6 @@ public class BugReportPreprocessor {
 		//System.out.println("Before split: ");
 		//System.out.println(content);
 		String[] words = content.split("(?=[A-Z])");
-		//String[] words = content.split("\\s+|\\p{Punct}+|\\d+");
 		//return new ArrayList<String>(Arrays.asList(words));
 		ArrayList<String> list =new ArrayList<String>(Arrays.asList(words));
 		String content2 = MiscUtility.list2Str(list);
@@ -122,18 +121,7 @@ public class BugReportPreprocessor {
 
 	
 	
-	protected ArrayList<String> splitLines(String content)
-	{
-		
-		String[] contentByLine=content.split("\\r?\\n");
-		//return new ArrayList<String>(Arrays.asList(contentByLine));
-		ArrayList<String> list =new ArrayList<String>(Arrays.asList(contentByLine));
-		String content2 = MiscUtility.list2Str(list);
-		String[] words = content2.split("(?=[A-Z])");
-		
-		return new ArrayList<String>(Arrays.asList(words));
-		
-	}
+
 	
 	public String performNLPforAllContent() {
 		// performing NLP operations
@@ -163,41 +151,7 @@ public class BugReportPreprocessor {
 
 	}
 
-	/*
-	public String performNLP() {
-		// performing NLP operations
-		ArrayList<String> lineOfContent=splitLines(content);
-		ArrayList<String> stemmed = new ArrayList<String>();
-		for (String indLine : lineOfContent) 
-		{
-			
-		ArrayList<String> words = splitContent(indLine);
-		//ArrayList<String> words = splitContent(this.content);
-		ArrayList<String> refined = removeStopWords(words);
-		//ArrayList<String> stemmed = new ArrayList<String>();
-		int found=0;
-		for (String word : refined) {
-			if (!word.trim().isEmpty()) {
-				String stemmedWord = performStemming(word.trim());
-				if (stemmedWord.length() >= 3) {
-					stemmedWord=stemmedWord.toLowerCase(Locale.ENGLISH);
-					stemmedWord=stemmedWord.trim();
-					stemmedWord=stemmedWord.replaceAll("�", "");
-					stemmedWord=stemmedWord.replaceAll("�", "");
-					if(!stemmedWord.isEmpty())
-						{
-							stemmed.add(stemmedWord.trim());
-							found=1;
-						}
-					}
-				}
-			}
-		if(found>0)stemmed.add("\n");
-		}
-		return MiscUtility.list2Str(stemmed);
-
-	}*/
-
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

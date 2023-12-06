@@ -26,12 +26,9 @@ public class BugReportCorpusBuilder {
 			String content=ContentLoader.readContentSimple(f.getAbsolutePath());
 			BugReportPreprocessor bpp=new BugReportPreprocessor(content);
 			String preprocessed=bpp.performNLPforAllContent();
-		
-			//preprocessed=fileName+": "+preprocessed.trim()+"\n";
 			String outFile=bugPPFolder+"/"+fileName;
 			ContentWriter.writeContent(outFile, preprocessed);
-			//allInOne+=allInOne+preprocessed+"\n";
-			System.out.println("Preprocessed:"+fileName);
+			//System.out.println("Preprocessed:"+fileName);
 			list.add(preprocessed);
 			
 		}
