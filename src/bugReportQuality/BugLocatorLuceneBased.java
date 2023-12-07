@@ -39,24 +39,19 @@ public class BugLocatorLuceneBased {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String corpusName="imgui";
-		String base="C:\\Users\\mukta\\OneDrive\\Documents\\PhD\\VisualBugProject\\Experiment\\DataSet\\Project1\\Corpus";
-		String indexFolder=base+"\\Index_"+corpusName+"\\";
-		//String bugReportFolder = "C:\\Users\\mukta\\OneDrive\\Documents\\PhD\\VisualBugProject\\Experiment\\DataSet\\Corpus\\IssueReports";
-		//With image text
-		//String bugReportFolder = "C:\\Users\\mukta\\OneDrive\\Documents\\PhD\\VisualBugProject\\Experiment\\DataSet\\Corpus\\IssueReportsWithImageText";
-		//Testing
-		String bugReportFolder = "C:\\Users\\mukta\\OneDrive\\Documents\\PhD\\VisualBugProject\\Experiment\\DataSet\\Project1\\Corpus\\IssueReporstForImageAnalysis\\WithImageTesting\\";
-	    //String subproject="CAMEL";
-        // String version="1_6_0";  
-		//String indexDir="C:/Users/Shamima/Documents/"+"E\\PhD\\Repo\\"+project+"\\"+subproject+"\\"+version+"\\data\\Index"+project+subproject+version+"\\";
-		//String bugReportFolder = "C:\\Users\\Mukta\\Workspace-2018\\QueryReformulation\\data\\testsetForBL\\test10";
-		//String bugReportFolder = "C:/Users/Shamima/Documents/"+"E\\PhD\\Repo\\"+project+"\\"+subproject+"\\"+version+"\\data\\testsetForVSM";
-		BugLocatorLuceneBased obj=new BugLocatorLuceneBased(indexFolder,bugReportFolder,418);
+		String corpus="Apache";
+		String project="HBASE";
+		String version="0_20_5";
+		String base="C:\\Users\\mukta\\OneDrive\\Documents\\Journals\\JSS-2023-2024\\Datasets\\Repo\\"+corpus+"-"+project+"\\"+version+"\\"+version+"\\";
+	
+		
+		String indexFolder=base+"\\Index_"+corpus+"\\";
+		String bugReportFolder = base + "\\data\\BugDataPreprocessed\\";
+	    BugLocatorLuceneBased obj=new BugLocatorLuceneBased(indexFolder,bugReportFolder,418);
 		HashMap<Integer, HashMap<String, Double>>finalResultHM=obj.getLuceneBasedScore();
-		//System.out.println(finalResultHM);
+		System.out.println(finalResultHM.size());
 		//obj.writeFinalResult(finalResultHM, "C:/Users/Shamima/Documents/"+"E\\PhD\\Repo\\"+project+"\\"+subproject+"\\"+version+"\\DataForFeatureExtraction\\RankInfo\\VSM100.txt");
-		ContentWriter.writeContentFinalResult(base+"\\FinalResultNoImageTestingDec05.txt", finalResultHM);
+		ContentWriter.writeContentFinalResult(base+"data\\Results\\FinalResultMethodDec07.txt", finalResultHM);
 	}
     public HashMap<Integer, HashMap<String, Double>> getLuceneBasedScore()
     {

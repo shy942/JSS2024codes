@@ -120,7 +120,7 @@ public class ContentWriter {
         try {
             FileWriter fwriter = new FileWriter(new File(outFile), true);
             for (Integer key:resultContainer.keySet()) {
-                fwriter.write(key+ "\n");
+                fwriter.write(key+":"+resultContainer.get(key).size()+ "\n");
                 HashMap<String, Double> queryContent=resultContainer.get(key);
                 for(String key2:queryContent.keySet())
                 {

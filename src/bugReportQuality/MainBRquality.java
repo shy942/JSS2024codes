@@ -28,5 +28,9 @@ public class MainBRquality {
 		String bugFolder = base + "\\data\\BugDataExtracted\\"; 
 		String bugPPFolder = base + "\\data\\BugDataPreprocessed\\";
 		new BugReportCorpusBuilder().createPreprocessedRepo(bugFolder, bugPPFolder);
+		
+		
+		//source code preprocessing
+		new SourceCodeCorpusBuilder( base).createPreprocessedRepo(corpus);
 	}
 }
