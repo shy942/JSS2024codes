@@ -123,11 +123,11 @@ public class MethodCorpusDeveloper {
 			filePart = this.packageName + "." + index + "." + lastPart;
 
 			String outFile = this.methodFolder + "\\" + filePart;
-			System.out.println("filePart:        " + filePart);
+			//System.out.println("filePart:        " + filePart);
 			SourceCodePreprocessor scbpp = new SourceCodePreprocessor(methodContent);
 
 			String preprocessed = scbpp.performNLP();
-			System.out.println(preprocessed);
+			//System.out.println(preprocessed);
 			ContentWriter.writeContent(outFile, preprocessed);
 			fileList.add(outFile);
 		}

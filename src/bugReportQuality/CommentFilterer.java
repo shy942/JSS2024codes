@@ -33,7 +33,7 @@ public class CommentFilterer {
 			CompilationUnit cu = JavaParser.parse(new ByteArrayInputStream(
 					orgContent.getBytes()));
 			cu.getComment().setContent(""); // class header comment is deleted
-			System.out.println(cu);
+			//System.out.println(cu);
 			//String refinedContent = cu.toString();
 			
 			//saveUpdatedVersion("./data/changed.java", refinedContent);

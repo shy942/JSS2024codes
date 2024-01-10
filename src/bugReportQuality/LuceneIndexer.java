@@ -141,8 +141,8 @@ public class LuceneIndexer {
 	
 	    // For optimal query
 		//String base="C:\\Users\\mukta\\OneDrive\\Documents\\PhD\\VisualBugProject\\Experiment\\DataSet\\Corpus";
-		String indexFolder=base+"\\Index_"+corpus+"\\";
-	    String docFolder=base+"\\"+"ProcessedSourceCorpus\\";
+		String indexFolder=base+"\\Index_"+corpus+"Plain\\";
+	    String docFolder=base+"\\"+"ProcessedSourceCorpusPlain\\";
 		
 	    LuceneIndexer obj= new LuceneIndexer(docFolder, indexFolder, corpus, base);
 	    obj.createIndex();

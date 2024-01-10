@@ -45,13 +45,13 @@ public class BugLocatorLuceneBased {
 		String base="C:\\Users\\mukta\\OneDrive\\Documents\\Journals\\JSS-2023-2024\\Datasets\\Repo\\"+corpus+"-"+project+"\\"+version+"\\"+version+"\\";
 	
 		
-		String indexFolder=base+"\\Index_"+corpus+"\\";
+		String indexFolder=base+"\\Index_"+corpus+"Plain\\";
 		String bugReportFolder = base + "\\data\\BugDataPreprocessed\\";
 	    BugLocatorLuceneBased obj=new BugLocatorLuceneBased(indexFolder,bugReportFolder,418);
 		HashMap<Integer, HashMap<String, Double>>finalResultHM=obj.getLuceneBasedScore();
 		System.out.println(finalResultHM.size());
 		//obj.writeFinalResult(finalResultHM, "C:/Users/Shamima/Documents/"+"E\\PhD\\Repo\\"+project+"\\"+subproject+"\\"+version+"\\DataForFeatureExtraction\\RankInfo\\VSM100.txt");
-		ContentWriter.writeContentFinalResult(base+"data\\Results\\FinalResultMethodDec07.txt", finalResultHM);
+		ContentWriter.writeContentFinalResult(base+"data\\Results\\FinalResultMethodDec14Plain.txt", finalResultHM);
 	}
     public HashMap<Integer, HashMap<String, Double>> getLuceneBasedScore()
     {
@@ -157,7 +157,7 @@ public class BugLocatorLuceneBased {
 				ScoreDoc item = hits[i];
 	        	Document doc = searcher.doc(item.doc);
 	        	double score=item.score;
-	        	System.out.println((i + 1) + ". " + doc.get("path") + "\t"+score);
+	        	//System.out.println((i + 1) + ". " + doc.get("path") + "\t"+score);
 	        	resultMap.put(doc.get("path"), score);
 			}
 		

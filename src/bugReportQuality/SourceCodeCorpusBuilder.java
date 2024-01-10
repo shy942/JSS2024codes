@@ -78,6 +78,10 @@ public class SourceCodeCorpusBuilder {
 		ContentWriter.writeContent(this.base+"\\data\\allFilesName.txt", listofFiles);
 	}
 	
+	public int getNoOfsourcecode()
+	{
+		return this.javaFilePaths.size();
+	}
 	public void loadJavaFilesOnly(final File folder) {
 		for (final File fileEntry : folder.listFiles()) {
 			if (fileEntry.isDirectory()) {

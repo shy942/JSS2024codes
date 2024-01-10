@@ -33,7 +33,7 @@ public class BugExtractorForBLRepo {
 
 		String corpus = "Apache";
 		String project = "HBASE";
-		String version = "0_20_5";
+		String version = "1_2_4";
 		String base = "C:\\Users\\mukta\\OneDrive\\Documents\\Journals\\JSS-2023-2024\\Datasets\\Repo\\" + corpus + "-"
 				+ project + "\\" + version + "\\" + version + "";
 		// String base="E:\\PhD\\Repo\\"+corpus+"\\"+project+"\\"+version;
